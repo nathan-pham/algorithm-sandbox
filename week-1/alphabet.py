@@ -23,7 +23,6 @@ def check_order(string):
   return True
 
 length = range(len(s) + 1) 
-max_string = ""
 in_order = []
 
 for start in length:
@@ -32,9 +31,4 @@ for start in length:
     if check_order(check):
       in_order.append(check)
 
-
-for item in in_order:
-  if len(item) > len(max_string):
-    max_string = item
-
-print("Longest substring in alphabetical order is:", max_string)
+print("Longest substring in alphabetical order is:", max(in_order, key=len))
